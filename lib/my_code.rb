@@ -20,7 +20,7 @@ def reduce(source_array, starting_point=0)
    return count 
   else if 
     source_array.all?{|x| return true if yield(x) == true}
-  else if source_array.all?{|x| return false if yield(x) == false || yield(x) == nil}
+  else if source_array.any?{|x| return false if yield(x) == false || yield(x) == nil}
   else 
    return true 
   end
